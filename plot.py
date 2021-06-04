@@ -4,7 +4,8 @@ from matplotlib import cm
 
 def plot_zlevel(df, vmin, vmax):
 
-    fig, ax = plt.subplots(1, 4, figsize=(22, 4))
+    nalgos = len(df.columns[3:])
+    fig, ax = plt.subplots(1, nalgos, figsize=(6*nalgos, 4))
 
     z = df['z'].values
     assert(len(np.unique(z)) == 1)
@@ -58,8 +59,9 @@ def plot_zlevel(df, vmin, vmax):
 
 
 def plot_time(df, vmin, vmax):
-
-    fig, ax = plt.subplots(1, 4, figsize=(22, 4))
+    
+    nalgos = len(df.columns[3:])
+    fig, ax = plt.subplots(1, nalgos, figsize=(6*nalgos, 4))
 
     z = df['z'].values
     assert(len(np.unique(z)) == 1)
